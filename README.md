@@ -6,20 +6,17 @@ A simple utility to encrypt / decrypt data with AES-256 GCM.
 
 ```
 aesgcm
-  -dec
-        Decrypt a file
-  -enc
-        Encrypt a file
-  -in string
-        Input file (default "-")
+  -d    decrypt a file
+  -e    encrypt a file
+  -g    generate a new key
+  -i string
+        input file (default "-")
   -k string
-        Key
-  -len int
-        Generate a new key with the given length (default 32)
-  -new
-        Generate a new key
-  -nonce string
-        Nonce
-  -out string
-        Output file (default "-")
+        key for encryption/decryption
+  -l int
+        generate a new key with the given length (default 32)
+  -n string
+        nonce for decryption
+  -o string
+        output file (default "-")
 ```

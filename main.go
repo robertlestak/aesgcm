@@ -77,14 +77,14 @@ func readInputData(in string) ([]byte, error) {
 }
 
 func main() {
-	flagNewKey := flag.Bool("new", false, "Generate a new key")
-	flagNewLength := flag.Int("len", 32, "Generate a new key with the given length")
-	flagEncrypt := flag.Bool("enc", false, "Encrypt a file")
-	flagDecrypt := flag.Bool("dec", false, "Decrypt a file")
-	flagOutput := flag.String("out", "-", "Output file")
-	flagInput := flag.String("in", "-", "Input file")
-	flagKey := flag.String("k", "", "Key")
-	flagNonce := flag.String("nonce", "", "Nonce")
+	flagNewKey := flag.Bool("g", false, "generate a new key")
+	flagEncrypt := flag.Bool("e", false, "encrypt a file")
+	flagDecrypt := flag.Bool("d", false, "decrypt a file")
+	flagNewLength := flag.Int("l", 32, "generate a new key with the given length")
+	flagKey := flag.String("k", "", "key for encryption/decryption")
+	flagNonce := flag.String("n", "", "nonce for decryption")
+	flagInput := flag.String("i", "-", "input file")
+	flagOutput := flag.String("o", "-", "output file")
 	flag.Parse()
 	if *flagNewKey {
 		key, err := GenerateNewAESKey(*flagNewLength)
